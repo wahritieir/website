@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warrier's World</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .parallax {
+            background-image: url('https://images.unsplash.com/photo-1496843916299-5909894d7a8f');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            padding: 20px;
+            animation: fadeIn 2s;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #ffcc00;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite alternate;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+        }
+        nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        section {
+            padding: 80px 0;
+            text-align: center;
+            color: #c9d1d9;
+        }
+        section h2 {
+            font-size: 3em;
+            color: #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+            display: inline-block;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            animation: bounce 2s infinite alternate;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .content p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content li {
+            background: #ffcc00;
+            margin: 20px 0;
+            padding: 20px 40px;
+            border-radius: 10px;
+            transition: background 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .content li:hover {
+            background: #ffaa00;
+        }
+        footer {
+            background: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .secret {
+            display: none;
+        }
+        .show-secret {
+            cursor: pointer;
+            color: #ffcc00;
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+    <script>
+        function toggleSecret() {
+            const secret = document.getElementById('secret');
+            if (secret.style.display === 'none' || secret.style.display === '') {
+                secret.style.display = 'block';
+            } else {
+                secret.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Warrier's World</h1>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="parallax">
+        <h2>Welcome to Warrier's World</h2>
+    </div>
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="content">
+            <p>Hello! I am Warrier, and I am passionate about programming, development, gaming, and hacking.</p>
+        </div>
+    </section>
+    <section id="interests">
+        <h2>Interests</h2>
+        <div class="content">
+            <ul>
+                <li>Programming</li>
+                <li>Development</li>
+                <li>Gaming</li>
+                <li>Hacking</li>
+            </ul>
+        </div>
+        <div class="content">
+            <p>Click below to reveal a secret message:</p>
+            <p class="show-secret" onclick="toggleSecret()">Show Secret</p>
+            <p id="secret" class="secret">I love challenges and learning new things every day!</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="content">
+            <p>Feel free to reach out to me:</p>
+        </div>
+        <div class="content">
+            <form class="contact-form" action="#" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Warrier's World. All rights reserved.</p>
+    </footer>
+</body>
+</html>
